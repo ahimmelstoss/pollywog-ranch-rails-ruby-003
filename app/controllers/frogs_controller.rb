@@ -26,7 +26,6 @@ class FrogsController < ApplicationController
 
   def update
     @frog.update_attributes(frog_params)
-    @frog.save
     redirect_to frogs_path
   end
 
