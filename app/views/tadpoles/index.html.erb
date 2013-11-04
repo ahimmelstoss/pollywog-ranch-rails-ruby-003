@@ -1,8 +1,6 @@
-<h1>Ponds</h1>
+<h1>Tadpoles</h1>
 <ol>
-<% @ponds.each do |pond| %>
-  <li><%= link_to pond.name, pond%></li>
+<% @tadpoles.each do |tadpole| %>
+  <li><%= link_to tadpole.name, tadpole%></li>
 <% end %>
 </ol>
-
-<p><%= link_to 'Create a new pond', new_pond_path %></p>

@@ -1,20 +1,10 @@
-<%= link_to 'Back', ponds_path %>
+<%= link_to 'Back', tadpoles_path %>
 
-<h1><%= @pond.name %> Pond</h1>
-<p>water type: <%= @pond.water_type %></p>
-<p>Resident frogs and their tadpoles:</p>
-<ol>
-  <% @pond.frogs.each do |frog| %>
-    <li><%= link_to frog.name, frog %>
-      <ol>
-        <% frog.tadpoles.each do |tadpole| %>
-          <li><%= link_to tadpole.name, tadpole %></li>
-        <% end %>
-      </ol>
-    </li>
-  <% end %>
-</ol>
-
-<%= link_to 'Back', ponds_path %> | 
-<%= link_to 'Edit', edit_pond_path %> | 
-<%= link_to 'Delete', pond_path, :confirm => 'Are you sure you want to delete the pond?', :method => :delete %>
+<h1><%= @tadpole.name %> Tadpole</h1>
+<p>Color: <%= @tadpole.color %></p>
+<p>Lives: <%= link_to @tadpole.frog.pond.name, pond_path %></p>
+<p>Parent: <%= link_to @tadpole.frog.name, frog_path %></p>
+<p><strong><a href="/tadpoles/<%= @tadpole.id %>/evolve">Evolve <%= @tadpole.name %> into a frog</a></strong></p>
+<%= link_to 'Back', tadpoles_path %> | 
+<%= link_to 'Edit', edit_tadpole_path %> | 
+<%= link_to 'Delete', tadpole_path, :confirm => 'Are you sure you want to delete this tadpole?', :method => :delete %>

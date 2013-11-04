@@ -5,3 +5,4 @@
   Lives: <%= f.select :pond_id, @ponds.collect{|pond| [pond.name, pond.id]} %> 
   <%= f.submit 'create frog'%>
 <% end %>
+<%= link_to 'Cancel', frogs_path %>

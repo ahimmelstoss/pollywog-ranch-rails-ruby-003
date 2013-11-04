@@ -1,6 +1,9 @@
-<h1>Edit pond: <%= @pond.name %></h1>
-<%= form_for(@pond) do |f| %>
+<h1>Edit tadpole: <%= @tadpole.name %></h1>
+<%= form_for(@tadpole) do |f| %>
   Name: <%= f.text_field 'name' %><br />
-  Water type: <%= f.text_field 'water_type' %><br />
-  <%= f.submit 'update pond'%>
+  Color: <%= f.text_field 'color' %><br />
+  Lives: <%= f.select :frog_id, @ponds.collect{|pond| [pond.name, pond.id]} %>
+  <%= f.submit 'update tadpole'%>
 <% end %>
+<br>
+<%= link_to 'Cancel', tadpoles_path %>

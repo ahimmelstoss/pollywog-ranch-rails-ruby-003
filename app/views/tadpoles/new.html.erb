@@ -1,6 +1,8 @@
-<h1>Create New Pond:</h1>
-<%= form_for(@pond) do |f| %>
+<h1>Create a new tadpole for <%= @frog.name %>:</h1>
+<%= form_for Tadpole.new do |f| %>
   Name: <%= f.text_field :name %><br />
-  Water type: <%= f.text_field :water_type %><br />
-  <%= f.submit 'create pond'%>
+  Color: <%= f.text_field :color %><br />
+  <%= f.hidden_field(:frog_id, :value => @frog.id) %>
+  <%= f.submit 'create tadpole'%>
 <% end %>
+<%= link_to 'Cancel', tadpoles_path %>
