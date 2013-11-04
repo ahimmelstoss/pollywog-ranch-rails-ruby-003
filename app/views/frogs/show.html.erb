@@ -1,0 +1,17 @@
+<%= link_to 'Back', frogs_path %>
+
+<h1><%= @frog.name %> Frog</h1>
+<p>Color: <%= @frog.color %></p>
+<p>Lives: <a href="/ponds/<%= @frog.pond.id %>"><%= @frog.pond.name %></a></p>
+<%= @frog.name %>'s tadpoles:
+<ol>
+  <% @frog.tadpoles.each do |tadpole| %>
+  <li><%= link_to tadpole.name, tadpole %></li>
+  <% end %>
+</ol>
+
+<p><strong><a href="/frogs/<%= @frog.id %>/tadpoles/new">Create new tadpole baby</a></strong></p>
+
+<%= link_to 'Back', frogs_path %> | 
+<%= link_to 'Edit', edit_frog_path %> | 
+<%= link_to 'Delete', frog_path, :confirm => 'Are you sure you want to delete this frog?', :method => :delete %>

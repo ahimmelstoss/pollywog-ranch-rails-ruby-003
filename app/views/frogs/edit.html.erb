@@ -1,0 +1,13 @@
+<h1>Edit frog: <%= @frog.name %></h1>
+<%= form_for(@frog) do |f| %>
+  Name: <%= f.text_field 'name' %><br />
+  Color: <%= f.text_field 'color' %><br />
+  <label for="lives">Lives:</label>
+  <select id="lives" name="pond_id">
+    <% @ponds.each do |pond| %>
+      <option value="<%= pond.id %>"><%= pond.name %></option><br>
+    <% end %>
+  <%= f.submit 'update frog'%>
+<% end %>
+<br>
+<%= link_to 'Return to all Frogs', frogs_path %>

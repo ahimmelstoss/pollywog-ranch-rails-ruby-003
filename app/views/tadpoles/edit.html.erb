@@ -1,0 +1,6 @@
+<h1>Edit pond: <%= @pond.name %></h1>
+<%= form_for(@pond) do |f| %>
+  Name: <%= f.text_field 'name' %><br />
+  Water type: <%= f.text_field 'water_type' %><br />
+  <%= f.submit 'update pond'%>
+<% end %>

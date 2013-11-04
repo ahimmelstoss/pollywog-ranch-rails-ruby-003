@@ -1,0 +1,11 @@
+<h1>Create New Frog:</h1>
+<%= form_for(@frog) do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Color: <%= f.text_field :color %><br />
+  <label for="lives">Lives:</label>
+  <select id="lives" name="pond_id">
+    <% @ponds.each do |pond| %>
+      <option value="<%= pond.id %>"><%= pond.name %></option><br>
+    <% end %>  
+  <%= f.submit 'create frog'%>
+<% end %>

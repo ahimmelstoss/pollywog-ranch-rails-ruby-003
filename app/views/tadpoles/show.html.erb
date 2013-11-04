@@ -1,0 +1,20 @@
+<%= link_to 'Back', ponds_path %>
+
+<h1><%= @pond.name %> Pond</h1>
+<p>water type: <%= @pond.water_type %></p>
+<p>Resident frogs and their tadpoles:</p>
+<ol>
+  <% @pond.frogs.each do |frog| %>
+    <li><%= link_to frog.name, frog %>
+      <ol>
+        <% frog.tadpoles.each do |tadpole| %>
+          <li><%= link_to tadpole.name, tadpole %></li>
+        <% end %>
+      </ol>
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to 'Back', ponds_path %> | 
+<%= link_to 'Edit', edit_pond_path %> | 
+<%= link_to 'Delete', pond_path, :confirm => 'Are you sure you want to delete the pond?', :method => :delete %>
