@@ -1,4 +1,6 @@
 <h1>Ponds</h1>
+
+<%= image_tag "pond.jpg", :title => 'Frog', :width => 600 %>
 <ol>
 <% @ponds.each do |pond| %>
   <li><%= link_to pond.name, pond%></li>
