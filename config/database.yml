@@ -18,8 +18,11 @@ test:
   pool: 5
   timeout: 5000
 
+# On Heroku in production, Heroku generates a production section automatically,
+# so this is not used.  If you wanted to test locally connecting to a production
+# database, the values in this section could be filled in by taking
+# https://postgres.heroku.com/databases/pollywog-ranch-teal and filling in:
+# database, username, password, host, port
 production:
   adapter: postgresql
-  database: pollywag_production_database
-  pool: 5
-  timeout: 5000
+  database: pollywog-ranch
