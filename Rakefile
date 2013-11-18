@@ -6,7 +6,7 @@ require File.expand_path('../config/application', __FILE__)
 PollywogRanchRailsRuby003::Application.load_tasks
 
 namespace :db do 
-  task :seed do
+  task :seed_old do
 
     # create ponds
 

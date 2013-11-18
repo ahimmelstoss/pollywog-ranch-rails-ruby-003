@@ -20,6 +20,17 @@ class FrogsController < ApplicationController
   def show
   end
 
+  def give_fly
+    Rails.logger.info("PARAMS: #{params.inspect}")
+    #PARAMS: {"fly_count"=>"3", "frog_id"=>"1", "action"=>"give_fly", "controller"=>"frogs"}
+    frog_id = params["frog_id"]
+    frog = Frog.find_by_id(frog_id)
+    frog.fly_count = params["fly_count"]
+    frog.save
+
+    render :json => frog
+  end
+
   def edit
     @ponds = Pond.all
   end

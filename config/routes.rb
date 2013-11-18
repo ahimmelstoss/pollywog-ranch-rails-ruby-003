@@ -4,6 +4,7 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   resources :frogs
   resources :tadpoles
   get 'tadpoles/:id/evolve' => 'tadpoles#evolve'
+  post "frogs_give_fly" => "frogs#give_fly" #ajax post route
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

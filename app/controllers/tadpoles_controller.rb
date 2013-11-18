@@ -37,6 +37,7 @@ class TadpolesController < ApplicationController
     @frog.name = @tadpole.name
     @frog.color = @tadpole.color
     @frog.pond = @tadpole.frog.pond
+    @frog.fly_count = 0
     if @frog.save && @tadpole.destroy
       redirect_to frogs_path
     end
