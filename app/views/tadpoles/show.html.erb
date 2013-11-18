@@ -2,7 +2,7 @@
 
 <h1><%= @tadpole.name %> Tadpole</h1>
 <p>Color: <%= @tadpole.color %></p>
-<p>Lives: <%= link_to @tadpole.frog.pond.name, pond_path %></p>
+<p>Lives: <%= link_to @tadpole.frog.pond.name, @tadpole.frog.pond %></p>
 <p>Parent: <%= link_to @tadpole.frog.name, frog_path %></p>
 <p><strong><a href="/tadpoles/<%= @tadpole.id %>/evolve">Evolve <%= @tadpole.name %> into a frog</a></strong></p>
 <%= link_to 'Back', tadpoles_path %> | 

@@ -3,7 +3,6 @@
 
 function giveFly(){
   var fly_count = parseInt($('#flycountspan').html());
-  fly_count = fly_count + 1;
   var frog_id = parseInt($('#flycountspan').data('frogid'));
   var data = {"fly_count":fly_count, "frog_id":frog_id}
   $.post( '/frogs_give_fly', data, function(new_fly_count){

@@ -25,7 +25,7 @@ class FrogsController < ApplicationController
     #PARAMS: {"fly_count"=>"3", "frog_id"=>"1", "action"=>"give_fly", "controller"=>"frogs"}
     frog_id = params["frog_id"]
     frog = Frog.find_by_id(frog_id)
-    frog.fly_count = params["fly_count"]
+    frog.fly_count += 1 
     frog.save
 
     render :json => frog

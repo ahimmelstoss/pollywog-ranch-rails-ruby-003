@@ -4,7 +4,7 @@
 <h3>Flies eaten today: <span id="flycountspan" data-frogid="<%= @frog.id%>"><%= @frog.fly_count %></span></h3>
 <input type="button" onclick="giveFly()" value="Give <%=@frog.name%> a fly!">
 <p>Color: <%= @frog.color %></p>
-<p>Lives: <%= link_to @frog.pond.name, pond_path %></p>
+<p>Lives: <%= link_to @frog.pond.name, @frog.pond %></p>
 <% unless @frog.tadpoles.empty? %>
 <%= @frog.name %>'s tadpoles:
 <ol>
