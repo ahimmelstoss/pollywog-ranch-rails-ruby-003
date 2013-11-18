@@ -2,7 +2,7 @@ class FrogsController < ApplicationController
   before_action :set_frog, only: [:show, :edit, :update, :destroy]
 
   def index
-    @frogs = Frog.all
+    @frogs = Frog.all.sort_by {|f| f.name.downcase}
     @frog = Frog.new
   end
 
