@@ -24,5 +24,6 @@ module PollywogRanchRailsRuby003
     # config.assets.initialize_on_precompile = false
 
     config.assets.enabled = false
+    config.serve_static_assets = true
   end
 end
