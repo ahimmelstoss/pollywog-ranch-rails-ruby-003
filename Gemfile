@@ -10,6 +10,7 @@ group :development, :test do
    gem 'sqlite3'
 end
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
 
@@ -53,3 +54,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'seed_dump'
+
